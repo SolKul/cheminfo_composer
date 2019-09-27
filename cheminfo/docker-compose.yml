@@ -1,0 +1,14 @@
+version: '3'
+services:
+    cheminfo:
+        build: notebook
+        container_name:'cheminfo_notebook'
+        ports:
+            - '8891:8888'
+        volumes:
+            - "../notebooks:/home/jovyan/notebooks"
+        environment: 
+            GRANT_SUDO: "yes"
+        tty: true
+        stdin_open: true
+        
