@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:1386e2046833
+FROM confirmed:1
 
 USER root
 
@@ -6,7 +6,8 @@ USER root
 RUN echo 'c.NotebookApp.password = "sha1:c0bd149d6e69:a7c58472d5a958f293865d4edf4ed564b8d4b2de"' >> \
  /home/jovyan/.jupyter/jupyter_notebook_config.py
  
-CMD
+CMD ["/bin/bash"]
+ENTRYPOINT [ "" ]
 # RUN mkdir /home/jovyan/notebooks
 # RUN chown jovyan:users /home/jovyan/notebooks
 
